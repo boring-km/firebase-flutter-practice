@@ -1,4 +1,4 @@
-package com.kangmin.bio_sns
+package com.kangmin.biosns
 
 import io.flutter.embedding.android.FlutterActivity
 

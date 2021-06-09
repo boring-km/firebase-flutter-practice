@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kangmin.bio_sns">
+    package="com.kangmin.biosns">
    <application
-        android:label="bio_sns"
+        android:label="biosns"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
