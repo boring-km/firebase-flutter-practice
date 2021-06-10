@@ -1,5 +1,7 @@
 import 'package:biosns/firebase.dart';
+import 'package:biosns/next.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:toast/toast.dart';
@@ -90,14 +92,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RaisedButton(
+            ElevatedButton(
               child: Text('addTest'),
               onPressed: () {
                 FirebaseImpl.addTest("진강민");
               },
             ),
             Text(_data),
-            RaisedButton(
+            ElevatedButton(
               child: Text('getTest'),
               onPressed: () async {
                 _data = await FirebaseImpl.readTest();
@@ -111,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text(email),
               ],
             ),
-            RaisedButton(
+            ElevatedButton(
               onPressed: () {
                 if (email == "") {
                   signIn();
@@ -129,6 +131,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
+            ),
+            ElevatedButton(
+                child: Text("다음 화면"),
+                onPressed: () {
+                  Navigator.push(context, CupertinoPageRoute(builder: (context) => SecondPage()));
+                }
             )
           ],
         ),
