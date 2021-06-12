@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mysql1/mysql1.dart';
-import 'package:toast/toast.dart';
 
 class SecondPage extends StatefulWidget {
   @override
@@ -11,7 +10,8 @@ class SecondPage extends StatefulWidget {
 
 class _SecondPageState extends State<SecondPage> {
 
-  MySqlConnection conn = null;
+  late MySqlConnection conn;
+  String text = "";
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,7 @@ class _SecondPageState extends State<SecondPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Text("두번째 화면"),
+                Text(text),
                 ElevatedButton(
                     onPressed: () {
                       _callMariaDB(context);
@@ -47,9 +48,11 @@ class _SecondPageState extends State<SecondPage> {
     var userId = 2;
     var sql = 'select * from User where userId = $userId';
     var results = await conn.query(sql);
-    for (var data in results) {
-      Toast.show('userId: ${data[0]}, email: ${data[1]}', context);
-    }
+    setState(() {
+      for (var data in results) {
+        text = 'userId: ${data[0]}, email: ${data[1]}';
+      }
+    });
   }
 
 }
