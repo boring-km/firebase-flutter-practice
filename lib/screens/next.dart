@@ -1,3 +1,4 @@
+import 'package:biosns/screens/third.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mysql1/mysql1.dart';
@@ -28,6 +29,12 @@ class _SecondPageState extends State<SecondPage> {
                       _callMariaDB(context);
                     },
                     child: Text("지정된 데이터 mariadb에서 호출")
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, CupertinoPageRoute(builder: (context) => ThirdPage()));
+                  },
+                  child: Text("Storage 테스트"),
                 )
               ],
             ),

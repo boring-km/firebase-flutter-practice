@@ -1,11 +1,12 @@
 import 'package:biosns/res/colors.dart';
 import 'package:biosns/screens/sign_in.dart';
+import 'package:biosns/screens/third.dart';
 import 'package:biosns/widgets/app_bar_title.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../auth.dart';
+import '../utils/auth.dart';
 
 class UserInfoScreen extends StatefulWidget {
   const UserInfoScreen({Key? key, required User user})
@@ -164,6 +165,12 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   ),
                 ),
               ),
+              ElevatedButton(
+                  child: Text("바로 DB 테스트"),
+                  onPressed: () {
+                    Navigator.push(context, CupertinoPageRoute(builder: (context) => ThirdPage()));
+                  }
+              )
             ],
           ),
         ),

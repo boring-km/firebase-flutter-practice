@@ -4,8 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../auth.dart';
-import '../next.dart';
+import '../utils/auth.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -36,20 +35,20 @@ class _SignInScreenState extends State<SignInScreen> {
                     Flexible(
                       flex: 1,
                       child: Image.asset(
-                        'assets/firebase_logo.png',
+                        'assets/thinkbig-logo.jpg',
                         height: 160,
                       ),
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'FlutterFire',
+                      '웅진씽크빅',
                       style: TextStyle(
                         color: CustomColors.firebaseYellow,
                         fontSize: 40,
                       ),
                     ),
                     Text(
-                      'Authentication',
+                      '생물도감 SNS',
                       style: TextStyle(
                         color: CustomColors.firebaseOrange,
                         fontSize: 40,
@@ -73,12 +72,6 @@ class _SignInScreenState extends State<SignInScreen> {
                   );
                 },
               ),
-              ElevatedButton(
-                  child: Text("바로 DB 테스트"),
-                  onPressed: () {
-                    Navigator.push(context, CupertinoPageRoute(builder: (context) => SecondPage()));
-                  }
-              )
             ],
           ),
         ),
@@ -146,7 +139,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(
-                  'Sign in with Google',
+                  'Google 로그인',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.black54,
