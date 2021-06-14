@@ -20,11 +20,11 @@ dependencies:
   google_sign_in: ^5.0.4
   mysql1: 0.19.2
   http: 0.13.3
-  test: 1.16.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  test: 1.16.8
 
 flutter:
   uses-material-design: true
